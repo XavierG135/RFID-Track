@@ -1,0 +1,19 @@
+/*body tag works with the entire page itself*/
+body
+{
+	/*background color of page*/
+	background-color: white;
+	/*color of text*/
+	color: black;
+}
+
+#Title
+{
+	text-align: center;
+}
+
+#loginContainer
+{
+	width: 500px;
+	height: 1000px;
+}

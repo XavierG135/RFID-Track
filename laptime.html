@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title> Lap time </title>
+	<link rel="stylesheet" href="LapTimeStyle.css">
+</head>
+<body>
+<h1 id="Title">Lap Time</h1>
+<p id="inputContainer">
+Find user lap times
+<input type="text" id="userId">
+<button id="find" type="submit">Find</button>
+</p>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyD6p-9BRKf2SACoQx5eP6nQXES5wGvhb8k",
+    authDomain: "test-c0590.firebaseapp.com",
+    databaseURL: "https://test-c0590.firebaseio.com",
+    projectId: "test-c0590",
+    storageBucket: "test-c0590.appspot.com",
+    messagingSenderId: "276881170649",
+    appId: "1:276881170649:web:3a6ab62c5ca44bf6b41ec8",
+    measurementId: "G-ZT21EXT66Y"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  
+  var db = firebase.firestore();
+  
+  
+db.collection("users").doc("56:67:E1:35").get().then(function(doc) {
+    if (doc.exists) {
+        console.log("Document data:", doc.data());
+    } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+
+db.collection("laps").where("userId", "==", "56:67:E1:35")
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+
+var UserId = "";
+
+document.getElementById("find").addEventListener("click", function() {
+	UserId = document.getElementById("userId").value;
+	console.log("the user id that is being used to match is ", UserId);
+	
+	db.collection("laps").where("userId", "==", UserId)
+		.get()
+		.then(function(querySnapshot) {
+		console.log("laps collection was got. Looking for matches with", UserId);
+			querySnapshot.forEach(function(doc) {
+				console.log("still looking");
+				// doc.data() is never undefined for query doc snapshots
+				console.log(doc.id, " =>", doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+});
+
+
+
+
+</script>
+</body>	
+</html>
