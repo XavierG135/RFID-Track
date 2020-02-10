@@ -1,0 +1,16 @@
+.user {
+    background: #eeeeee;
+    margin-bottom: 5px;
+   
+    text-decoration: underline;
+}
+
+td {
+    padding: 5px;
+}
+.users {
+    width: 100%;
+}
+.name {
+    font-weight: bold;
+}
