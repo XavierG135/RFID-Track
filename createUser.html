@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <!-- Write code here! -->
+        <div id="content">
+           Enter ID <input id = "userID" type = "text"> <br>
+           Enter Name <input id = "userName" type = "text"> <br>
+           Enter Age <input id = "userAge" type = "number" max="19" min="14"> <br>
+           Enter Gender <select id="userGender"> 
+               <option> </option>
+               <option value= "true"> Male </option>
+               <option value="false"> Female </option>
+           </select> <br>
+           Enter Grade <select id="userGrade">
+               <option> </option>
+               <option value="9"> Freshman </option>
+               <option value="10"> Sophomore</option>  
+               <option value="11"> Junior</option>  
+               <option value="12"> Senior</option>  
+            </select> <br>
+            <button id="enterData" type = "submit"> 
+                Submit
+            </button>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="createUser.js"></script>
+    </body>
+</html>
