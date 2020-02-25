@@ -10,7 +10,6 @@ $(document).ready(function() {
             url: 'https://lgk9c3wzdi.execute-api.us-east-2.amazonaws.com/dev/users/',
             contentType: 'application/json',
             data:JSON.stringify({
-                message: "crespo is a simp",
                 name: document.getElementById("userName").value ,
                 age: parseInt(document.getElementById("userAge").value),
                 gender: gender,
