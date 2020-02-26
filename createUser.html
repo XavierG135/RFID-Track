@@ -7,20 +7,21 @@
                 document.getElementById("createUserForm").reset();
             }
         </script>
+        <link href="createUser.css" rel="stylesheet" type="text/css">
     </head>
     <body onload="clearCreate();"> 
         <!-- Write code here! -->
         <div id="content">
             <form id="createUserForm">
-                Enter ID <input id = "userID" type = "text"> <br>
-                Enter Name <input id = "userName" type = "text"> <br>
-                Enter Age <input id = "userAge" type = "number" max="19" min="14"> <br>
-                Enter Gender <select id="userGender"> 
+                Enter ID <input class="textInput" id = "userID" type = "text"> <br>
+                Enter Name <input class="textInput" id = "userName" type = "text"> <br>
+                Enter Age <input class="textInput" id = "userAge" type = "number" max="19" min="14"> <br>
+                Enter Gender <select class="textInput" id="userGender"> 
                     <option> </option>
                     <option value= "true"> Male </option>
                     <option value="false"> Female </option>
                 </select> <br>
-                Enter Grade <select id="userGrade">
+                Enter Grade <select id="userGrade" class="textInput">
                     <option> </option>
                     <option value="9"> Freshman </option>
                     <option value="10"> Sophomore</option>  
@@ -28,11 +29,11 @@
                     <option value="12"> Senior</option>  
                 </select> <br>
             </form>
-                <button id="enterData" type = "submit"> 
+                <button class="buttons" id="enterData" type = "submit"> 
                      Submit
                 </button>
-                <input id="clearCreateUserButton" type="button" onclick="clearCreate()" value="Clear">
-                <button id="backToTable" onclick="window.location.href = 'index.html'"> 
+                <input class="buttons" id="clearCreateUserButton" type="button" onclick="clearCreate()" value="Clear">
+                <button class="buttons" id="backToTable" onclick="window.location.href = 'index.html'"> 
                      Return to Table 
                 </button>
             </fieldset>
